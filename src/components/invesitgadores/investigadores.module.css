@@ -1,0 +1,36 @@
+.main{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 10%;
+
+}
+
+.main hr{
+    width: 40%;
+}
+
+.list{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 0% 10%;
+    padding-bottom: 2%;
+}
+
+.list div{
+    width: 40%;
+    height: 200px;
+    border: 1px solid black;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    margin: 1%
+}
+
+.list h3{
+    font-weight: 1;
+}

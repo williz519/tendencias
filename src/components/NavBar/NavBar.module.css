@@ -1,0 +1,32 @@
+.nav{
+    display: flex;
+    z-index: 1;
+    background-color: #333;
+    color: white;
+}
+
+
+.items{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.list{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    list-style-type: none
+}
+
+.list li{
+    padding:2%;
+    color: black
+}
+
+.list a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,27 @@
+.main{
+    min-height: 68.7vh;
+
+    padding: 0% 10%;
+}
+
+.header{
+
+    display: flex;
+    margin: 1%
+}
+
+.imagen{
+    width: 40%;
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    margin: 1%
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
