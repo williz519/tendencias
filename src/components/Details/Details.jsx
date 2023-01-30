@@ -3,7 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../footer/footer";
 import S from "./Detail.module.css";
 import { useLocation } from "react-router-dom";
-import * as Lista from "./invest";
+import * as Lista2 from "./invest";
 import { useState, useEffect } from "react";
 
 const Details = () => {
@@ -14,7 +14,8 @@ const Details = () => {
 
   useEffect(() => {
     let index = location.pathname[location.pathname.length - 1];
-    setInfo(Lista[parseInt(index - 1)]);
+    let List = Lista2[parseInt(index)];
+    setInfo(List);
     setLoading(false);
   }, []);
 
@@ -34,7 +35,7 @@ const Details = () => {
             <h2>Proyectos</h2>
             <div>
               <ul>
-                {Info.projects.map((item) => (
+                {Info.projects?.map((item) => (
                   <li> {item} </li>
                 ))}
               </ul>
@@ -43,7 +44,7 @@ const Details = () => {
             <h2> Publicaciones </h2>
             <div>
               <ul>
-                {Info.publish.map((item) => (
+                {Info.publish?.map((item) => (
                   <li> {item} </li>
                 ))}
               </ul>

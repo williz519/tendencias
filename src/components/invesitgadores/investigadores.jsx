@@ -1,15 +1,16 @@
 import React from "react";
 import S from "./investigadores.module.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import * as Lista from "../Details/invest";
+import * as Lista2 from "../Details/invest";
+console.log(Lista2);
 
 const Investigadores = () => {
   const [invest, setInvest] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setInvest(Lista);
+    setInvest(Lista2);
     setLoading(false);
   }, []);
 
@@ -28,10 +29,16 @@ const Investigadores = () => {
 
           <div className={S.list}>
             <ul>
-              {invest.map((item) => (
-                <Link to={`/Detail/${item.id}`} className={S.Link}>
+              {invest.map((item, id) => (
+                <NavLink
+                  to={`/Detail/${id}`}
+                  style={({ isActive }) => ({
+                    color: isActive ? "green" : "black",
+                    textDecoration: isActive ? "none" : "none",
+                  })}
+                >
                   <li>{item.name}</li>
-                </Link>
+                </NavLink>
               ))}
             </ul>
           </div>

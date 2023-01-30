@@ -1,7 +1,7 @@
-module.exports = [
+let Lista = [
   {
     id: 1,
-    name: "PhD. William Albeiro Alvarez Valle",
+    name: "William Albeiro Alvarez Valle (PhD)",
     projects: [
       "Investigador, Mercado Laboral en el Oriente Antioqueño, Universidad de Antioquia - UCO, 2021",
       "Investigador, Mercado Laboral en el Oriente Antioqueño, Universidad de Antioquia - UCO, 2019.",
@@ -21,8 +21,8 @@ module.exports = [
   },
 
   {
-    id: 1,
-    name: "Mg Jhon Edwar Torres Gorrón",
+    id: 2,
+    name: "Jhon Edwar Torres Gorrón (Mg)",
     projects: [
       "Asesor - Proyecto Observatorio para la inserción laboral y fortalecimiento de la empleabilidad en países de la Alianza del Pacífico Emple-AP.",
       "Investigador – Proyecto modelos macroeconométricos para la estimación de los agregados económicos, Grupo de macroeconomía aplicada.",
@@ -44,4 +44,59 @@ module.exports = [
       "Ojeda-Joya, J. & Torres, J. Posición externa de largo plazo y tipo de cambio real de equilibrio en Colombia. Lecturas de economía, 77, 9-52 (2012).",
     ],
   },
+
+  {
+    id: 3,
+    name: "Zenón Darío Zapata (Esp)",
+    projects: [],
+    publish: [],
+  },
+
+  {
+    id: 4,
+    name: "Juan Felipe Garcés (Mg)",
+    projects: [],
+    publish: [],
+  },
+
+  {
+    id: 5,
+    name: "Pilar Paredes (Mg)",
+    projects: [],
+    publish: [],
+  },
+
+  {
+    id: 6,
+    name: "Daniel Alejandro Ramírez (Mg)",
+    publish: [],
+    projects: [],
+  },
+
+  {
+    id: 7,
+    name: "Mateo Ramirez Gaviria (Mg)",
+    publish: [],
+    projects: [],
+  },
+
+  {
+    id: 8,
+    name: "Diana Alexa Torres (Coordinadora investigación U de A seccional Oriente)",
+    publish: [],
+    projects: [],
+  },
 ];
+
+const Ordering = (a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  } else if (a.name > b.name) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
+let Lista2 = Lista.sort(Ordering);
+module.exports = Lista2;
