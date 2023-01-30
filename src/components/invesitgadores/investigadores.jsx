@@ -21,23 +21,19 @@ const Investigadores = () => {
             <h1>Investigadores</h1>
             <hr />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit non
-              rerum officia quae quia quibusdam et ullam ex quas autem.
-              Similique, dolore illo. Impedit, repudiandae. Et consectetur
-              numquam voluptate corporis.
+              Actualmente, el grupo está conformado por los siguientes
+              integrantes:
             </p>
           </div>
 
           <div className={S.list}>
-            {invest.map((item) => (
-              <div>
-                <div className={S.img}>imagen</div>
-                <h3>{item.name}</h3>
-                <Link to={`/Detail/${item.id}`}>
-                  <button>Detalles</button>
+            <ul>
+              {invest.map((item) => (
+                <Link to={`/Detail/${item.id}`} className={S.Link}>
+                  <li>{item.name}</li>
                 </Link>
-              </div>
-            ))}
+              ))}
+            </ul>
           </div>
         </>
       ) : (

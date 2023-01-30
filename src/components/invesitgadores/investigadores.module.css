@@ -2,19 +2,23 @@
     display: flex; 
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+   
     padding: 0% 10%;
-
 }
+
+
 
 .main hr{
     width: 40%;
 }
-
-.list{
+.main h1{
     display: flex; 
     justify-content: center;
     align-items: center;
+}
+
+.list{
+
     padding: 0% 10%;
     padding-bottom: 2%;
 }
@@ -31,6 +35,17 @@
     margin: 1%
 }
 
+.list Link{
+    text-decoration: none;
+    text-decoration-line: none ;
+}
+
 .list h3{
     font-weight: 1;
+}
+
+
+.Link{
+    text-decoration: none;
+    
 }

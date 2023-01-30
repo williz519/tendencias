@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={S.footer}>
       <h2> Contáctanos</h2>
       <hr />
-      <h4> email@email.com</h4>
+      <h4> tendencias@udea.edu.co </h4>
     </div>
   );
 };
