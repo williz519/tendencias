@@ -65,23 +65,24 @@ const Mision = () => {
           investigación TENDENCIAS ha realizado las siguientes actividades:
         </p>
         <ul>
-          <li> Determinar necesidades y oportunidades de investigación</li>
           <li>
-            Desarrollar proyectos de investigación que conduzcan a la solución
-            de las necesidades detectadas.
+            Organización del Congreso Nacional de Mercado Laboral: Retos
+            Regionales del Mercado de Trabajo, realizado en la Universidad de
+            Antioquia – Seccional Oriente el 10 y 11 de noviembre de 2022.
           </li>
           <li>
-            Generar productos de investigación de alto nivel que generen un
-            impacto a nivel regional y nacional.
+            Presentación del avance de investigación “Disparidades Subregionales
+            en el Mercado de Trabajo en Antioquia” en los seminarios técnicos
+            del Departamento Nacional de Planeación. 20 de octubre de 2022.
           </li>
           <li>
-            Divulgar ante la comunidad académica y científica los planes y
-            resultados de investigación.
+            Sometimiento de los resultados de investigación “Análisis
+            Exploratorio de la heterogeneidad del desempleo en el Departamento
+            de Antioquia”, 2022.
           </li>
-          <li>Fomentar la cultura investigativa de la institución.</li>
           <li>
-            Fortalecer las líneas de investigación del grupo de investigación
-            tendencias
+            Participación conjunta con el grupo de Macroeconomía en el proyecto
+            “Antioquia es plana” entre el IDEA y la Universidad de Antioquia.
           </li>
         </ul>
       </div>
