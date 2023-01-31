@@ -6,15 +6,24 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { AiOutlineMenu } from 'react-icons/ai'
+import { Navigate } from 'react-router-dom';
 
+
+import { useNavigate } from "react-router-dom";
 
 
 const settings = ['Inicio', 'Investigadores'];
+
+const redireccion = (setting) => {
+  if (setting == 'Inicio') {
+    console.log(setting);
+    //  Redireccionar al home 
+  }
+}
 
 function NavBarMU() {
 
@@ -56,9 +65,9 @@ function NavBarMU() {
             </Button>
           </Typography>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <AiOutlineMenu style={{ color: 'white' }} />
+            <Tooltip title="Info  ">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} >
+                <AiOutlineMenu  style={{ color: 'white' }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -79,7 +88,7 @@ function NavBarMU() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu} >
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center" onClick={()=> {redireccion(setting)} } >{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

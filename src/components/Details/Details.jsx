@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../NavBar/NavBar";
+import NavBarMU from "../NavBar/NavBarMU";
 import Footer from "../footer/footer";
 import S from "./Detail.module.css";
 import { useLocation } from "react-router-dom";
@@ -21,7 +21,7 @@ const Details = () => {
 
   return (
     <div>
-      <NavBar />
+      <NavBarMU />
       {loading === false ? (
         <div className={S.main}>
           <div className={S.header}>

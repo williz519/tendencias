@@ -3,6 +3,7 @@ import S from "./investigadores.module.css";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as Lista2 from "../Details/invest";
+
 console.log(Lista2);
 
 const Investigadores = () => {
@@ -38,6 +39,10 @@ const Investigadores = () => {
                   })}
                 >
                   <li>{item.name}</li>
+
+                  
+
+
                 </NavLink>
               ))}
             </ul>

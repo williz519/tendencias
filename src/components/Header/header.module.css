@@ -1,24 +1,49 @@
 .header{
     background-color: black;
+
     color: white;
-    height: 60vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.header h1{
-    font-weight: 1;
-    font-size: 300%;
+.cosa h1{
+    font-weight: bold;
+    font-size: 3vw;
 }
 
-.header h3{
-    font-weight: 1;
+.cosa h2{
+    font-weight: bold;
+    font-size: 2.5vw;
 }
 
-.carrusel{
-    background-color: blue;
-    padding: 10%
 
+
+.cosa {
+    position: absolute;
+    color: red;
+    text-align: center;
+    margin-left: 5%;
+    z-index: 2;
+    width: 90%;
+
+    border-radius: 20px;   
 }
+
+
+.carousel {
+margin-top: 40px;
+position: relative;
+height: 100%;
+}
+
+.carousel img {
+    
+    height: 15rem;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 20px;   
+} 
