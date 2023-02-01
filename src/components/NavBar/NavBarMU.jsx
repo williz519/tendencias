@@ -1,22 +1,19 @@
 import * as React from "react";
-
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-
 import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
-
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import udea from "./udea.png";
-
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Button } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 const pages = ["Inicio", "Investigadores", "Líneas de investigación"];
 
@@ -124,7 +121,7 @@ export default function NavBar(props) {
                 paddingRight: "6%",
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page, id) => (
                 <>
                   <Button
                     size="large"
@@ -138,15 +135,27 @@ export default function NavBar(props) {
                       fontSize: 20,
                     }}
                   >
-                    <a
-                      style={{
-                        "text-decoration": "none",
-                        color: "white",
-                      }}
-                      href={`#${page.toLowerCase()}`}
-                    >
-                      {page}
-                    </a>
+                    {id === 0 ? (
+                      <NavLink
+                        style={({ isActive }) => ({
+                          color: isActive ? "white" : "white",
+                          textDecoration: isActive ? "none" : "none",
+                        })}
+                        to="/"
+                      >
+                        Inicio
+                      </NavLink>
+                    ) : (
+                      <a
+                        style={{
+                          "text-decoration": "none",
+                          color: "white",
+                        }}
+                        href={`#${page.toLowerCase()}`}
+                      >
+                        {page}
+                      </a>
+                    )}
                   </Button>
                 </>
               ))}
