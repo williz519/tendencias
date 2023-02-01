@@ -190,17 +190,29 @@ export default function NavBar(props) {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page, id) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <a
-                    style={{
-                      "text-decoration": "none",
-                      color: "black",
-                    }}
-                    href={`#${page.toLowerCase()}`}
-                  >
-                    {page}
-                  </a>
+                  {id === 0 ? (
+                    <NavLink
+                      style={({ isActive }) => ({
+                        color: isActive ? "black" : "black",
+                        textDecoration: isActive ? "none" : "none",
+                      })}
+                      to="/"
+                    >
+                      Inicio
+                    </NavLink>
+                  ) : (
+                    <a
+                      style={{
+                        "text-decoration": "none",
+                        color: "black",
+                      }}
+                      href={`#${page.toLowerCase()}`}
+                    >
+                      {page}
+                    </a>
+                  )}
                 </MenuItem>
               ))}
             </Menu>

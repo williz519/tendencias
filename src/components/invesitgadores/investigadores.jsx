@@ -3,6 +3,7 @@ import S from "./investigadores.module.css";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as Lista2 from "../Details/invest";
+import { Box, Divider, Typography } from "@mui/material";
 
 console.log(Lista2);
 
@@ -16,38 +17,70 @@ const Investigadores = () => {
   }, []);
 
   return (
-    <div id="investigadores">
+    <Box
+      id="investigadores"
+      sx={{
+        paddingTop: "2%",
+      }}
+    >
       {loading === false ? (
         <>
-          <div className={S.main}>
-            <h1>Investigadores</h1>
-            <hr />
-            <p>
-              Actualmente, el grupo está conformado por los siguientes
-              integrantes:
-            </p>
-          </div>
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 500,
+                  color: "#0f5531",
+                }}
+              >
+                Investigadores
+              </Typography>{" "}
+              <Divider sx={{ width: "40%" }} />
+            </Box>
 
-          <div className={S.list}>
-            <ul>
-              {invest.map((item, id) => (
-                <NavLink
-                  to={`/Detail/${id}`}
-                  style={({ isActive }) => ({
-                    color: isActive ? "green" : "#666666",
-                    textDecoration: isActive ? "none" : "none",
-                  })}
-                >
-                  <li>{item.name}</li>
-                </NavLink>
-              ))}
-            </ul>
-          </div>
+            <Box
+              sx={{
+                padding: "2% 10%",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#666",
+                }}
+              >
+                Actualmente, el grupo está conformado por los siguientes
+                integrantes:
+              </Typography>
+              <Box>
+                <ul>
+                  {invest.map((item, id) => (
+                    <NavLink
+                      to={`/Detail/${id}`}
+                      style={({ isActive }) => ({
+                        color: isActive ? "green" : "#666666",
+                        textDecoration: isActive ? "none" : "none",
+                      })}
+                    >
+                      <li>{item.name}</li>
+                    </NavLink>
+                  ))}
+                </ul>
+              </Box>
+            </Box>
+          </Box>
         </>
       ) : (
-        <h1> Cargando... </h1>
+        <Typography> Cargando... </Typography>
       )}
-    </div>
+    </Box>
   );
 };
 

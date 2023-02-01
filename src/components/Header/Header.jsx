@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import S from "./header.module.css";
@@ -25,7 +25,13 @@ const Header = () => {
           <Typography variant="h1">
             GRUPO DE INVESTIGACIÓN TENDENCIAS
           </Typography>
-          <Typography variant="h2">
+
+          <Typography
+            variant="h2"
+            sx={{
+              paddingTop: "5%",
+            }}
+          >
             Territorio, Ciencia, Educación e Ingeniería
           </Typography>
         </Box>

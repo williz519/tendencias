@@ -1,27 +1,68 @@
+import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
-import S from "./lineas.module.css";
+import { NavLink } from "react-router-dom";
+
+const lineas = [
+  "Pedagogia",
+  "Economia regional",
+  "Ciencia y analisis de datos",
+  "Modelacion matematica y computacional",
+];
 
 const Lineas = () => {
   return (
-    <div id="líneas de investigación">
-      <div className={S.header}>
-        <h1> Lineas de Investigación </h1>
-        <hr />
-      </div>
+    <Box id="líneas de investigación">
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 500,
+            color: "#0f5531",
+          }}
+        >
+          Líneas de Investigación
+        </Typography>
+        <Divider
+          sx={{
+            width: "40%",
+          }}
+        />
+      </Box>
 
-      <div className={S.list}>
-        <p>
+      <Box
+        sx={{
+          padding: "2% 10%",
+          color: "#666",
+        }}
+      >
+        <Typography>
           Actualmente el grupo de investigación TENDENCIAS cuenta con las
           siguientes línes de investigación:
-        </p>
-        <ul>
-          <li>Pedagogía</li>
-          <li>Economia regional</li>
-          <li>Ciencia y análisis de datos </li>
-          <li>Modelación matemática y computacional </li>
-        </ul>
-      </div>
-    </div>
+        </Typography>
+        <Box>
+          <ul>
+            {lineas.map((item, id) => (
+              <NavLink
+                to={`/Invest/${item}`}
+                style={({ isActive }) => ({
+                  color: isActive ? "green" : "#666666",
+                  textDecoration: isActive ? "none" : "none",
+                })}
+              >
+                <li>{item}</li>
+              </NavLink>
+            ))}
+          </ul>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
