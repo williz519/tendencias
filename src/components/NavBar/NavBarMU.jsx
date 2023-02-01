@@ -1,32 +1,86 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fade from "@mui/material/Fade";
+import udea from "./udea.png";
+import AdbIcon from "@mui/icons-material/Adb";
+import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { AiOutlineMenu } from "react-icons/ai";
-import { Navigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
+const pages = ["Inicio", "Investigadores", "Líneas de investigación"];
 
-const settings = ["Inicio", "Investigadores"];
+function ElevationScroll(props) {
+  const { children, window } = props;
 
-const redireccion = (setting) => {
-  if (setting == "Inicio") {
-    console.log(setting);
-    //  Redireccionar al home
-  }
-};
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
 
-function NavBarMU() {
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
+
+function ScrollTop(props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: "center",
+      });
+    }
+  };
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  );
+}
+
+export default function NavBar(props) {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -34,77 +88,132 @@ function NavBarMU() {
   };
 
   return (
-    <AppBar
-      position="relative"
-      sx={{
-        backgroundColor: "#0d4928",
-      }}
-    >
-      <Container
-        sx={{
-          backgroundColor: "#0d4928",
-        }}
-      >
-        <Toolbar disableGutters>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
+    <Box>
+      <CssBaseline />
+      <ElevationScroll {...props}>
+        <AppBar
+          sx={{
+            backgroundColor: "#0a351c",
+            display: "flex",
+            flexDirection: "row",
+            textAlign: "center",
+            justifyContent: "left",
+            height: "11vh",
+          }}
+        >
+          {" "}
+          <Box sx={{ width: "20%", padding: "10px" }}>
+            <a
+              href="https://www.udea.edu.co"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={udea}
+                style={{
+                  filter: "invert()",
+                }}
+                width="200px"
+                alt="Universidad de Antioquia"
+              />
+            </a>
+          </Box>
+          <Toolbar
             sx={{
-              mr: 2,
-              display: { xs: "flex", md: "  " },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              width: "80%",
+              textAlign: "right",
             }}
           >
-            <Button variant="contained" color="success">
-              Tendencias
-            </Button>
-          </Typography>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Info  ">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <AiOutlineMenu style={{ color: "white" }} />
-              </IconButton>
-            </Tooltip>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                textAlign: "right",
+                justifyContent: "end",
+                paddingRight: "6%",
+              }}
+            >
+              {pages.map((page) => (
+                <>
+                  <Button
+                    size="large"
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 4,
+                      color: "white",
+                      display: "block",
+                      textTransform: "none",
+                      fontSize: 20,
+                    }}
+                  >
+                    <a
+                      style={{
+                        "text-decoration": "none",
+                        color: "white",
+                      }}
+                      href={`#${page.toLowerCase()}`}
+                    >
+                      {page}
+                    </a>
+                  </Button>
+                </>
+              ))}
+            </Box>
+          </Toolbar>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
             <Menu
-              sx={{ mt: "45px" }}
               id="menu-appbar"
-              anchorEl={anchorElUser}
+              anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "right",
+                horizontal: "left",
               }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography
-                    textAlign="center"
-                    onClick={() => {
-                      redireccion(setting);
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <a
+                    style={{
+                      "text-decoration": "none",
+                      color: "black",
                     }}
+                    href={`#${page.toLowerCase()}`}
                   >
-                    {setting}
-                  </Typography>
+                    {page}
+                  </a>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+        </AppBar>
+      </ElevationScroll>
+      <Toolbar id="back-to-top-anchor" />
+
+      <ScrollTop {...props}>
+        <Fab size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+    </Box>
   );
 }
-export default NavBarMU;

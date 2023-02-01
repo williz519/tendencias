@@ -2,8 +2,11 @@
     display: flex; 
     flex-direction: column;
     justify-content: center;
-   
     padding: 0% 10%;
+}
+
+.main p{
+    color: #666666
 }
 
 
@@ -15,6 +18,7 @@
     display: flex; 
     justify-content: center;
     align-items: center;
+    color: #0f5531
 }
 
 .list{
@@ -32,13 +36,15 @@
     justify-content: center;
     align-items: center;
     padding: 3%;
-    margin: 1%
+    margin: 1%;  
+
 }
 
 .list Link{
     text-decoration: none;
     text-decoration-line: none ;
-    color: black;
+    
+    color: #666666
 }
 
 .list h3{
@@ -48,4 +54,6 @@
 
 .Link{
     text-decoration: none;
+    color: #666666
 }
+

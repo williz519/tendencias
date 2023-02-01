@@ -4,7 +4,7 @@ const Mision = () => {
   return (
     <div id="mision" className={S.main}>
       <div className={S.header}>
-        <h1> Misión</h1>
+        <h1> Misión </h1>
         <hr />
         <p>
           El grupo de investigación TENDENCIAS fue creado en junio de 2022 como

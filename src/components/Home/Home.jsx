@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarMU from "../NavBar/NavBarMU";
+import NavBar from "../NavBar/NavBarMU";
 import Mision from "../Mision/Mision";
 import Investigadores from "../invesitgadores/investigadores";
 import Footer from "../footer/footer";
@@ -9,7 +9,7 @@ import Lineas from "../lineas/Lineas";
 export const Home = () => {
   return (
     <div>
-      <NavBarMU />
+      <NavBar />
       <Header />
       <Mision />
       <Investigadores />

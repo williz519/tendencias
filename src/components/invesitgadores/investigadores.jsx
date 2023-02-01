@@ -16,7 +16,7 @@ const Investigadores = () => {
   }, []);
 
   return (
-    <div>
+    <div id="investigadores">
       {loading === false ? (
         <>
           <div className={S.main}>
@@ -34,15 +34,11 @@ const Investigadores = () => {
                 <NavLink
                   to={`/Detail/${id}`}
                   style={({ isActive }) => ({
-                    color: isActive ? "green" : "black",
+                    color: isActive ? "green" : "#666666",
                     textDecoration: isActive ? "none" : "none",
                   })}
                 >
                   <li>{item.name}</li>
-
-                  
-
-
                 </NavLink>
               ))}
             </ul>

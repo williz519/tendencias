@@ -1,3 +1,4 @@
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import S from "./header.module.css";
@@ -10,12 +11,26 @@ const anArrayOfNumbers = [
 
 const Header = () => {
   return (
-    <div>
-      <div className={S.cosa}>
-        <h1>GRUPO DE INVESTIGACIÓN TENDENCIAS</h1>
-        <h2> Territorio, Ciencia, Educación e Ingeniería </h2>
-      </div>
-      <div className={S.carousel}>
+    <Box>
+      <Box className={S.cosa}>
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            translate: "0vh 20vh",
+          }}
+        >
+          <Typography variant="h1">
+            GRUPO DE INVESTIGACIÓN TENDENCIAS
+          </Typography>
+          <Typography variant="h2">
+            Territorio, Ciencia, Educación e Ingeniería
+          </Typography>
+        </Box>
+      </Box>
+      <Box className={S.carousel}>
         <Carousel
           autoPlay={false}
           indicatorContainerProps={{
@@ -27,11 +42,11 @@ const Header = () => {
           }}
         >
           {anArrayOfNumbers.map((item, i) => (
-            <div key={i}>{item}</div>
+            <Box key={i}>{item}</Box>
           ))}
         </Carousel>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

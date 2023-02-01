@@ -28,11 +28,11 @@
 .carousel {
     position: relative;
     width: 100%;
-/*     min-height: 75vh; */
+    height: 80vh;
 }
 
 .carousel img {
-    height: 70vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     margin: 0 auto;

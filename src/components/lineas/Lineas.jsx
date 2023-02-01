@@ -3,7 +3,7 @@ import S from "./lineas.module.css";
 
 const Lineas = () => {
   return (
-    <div>
+    <div id="líneas de investigación">
       <div className={S.header}>
         <h1> Lineas de Investigación </h1>
         <hr />

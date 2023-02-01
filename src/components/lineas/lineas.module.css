@@ -1,6 +1,7 @@
 .header{
     padding: 0% 10%; 
     text-align: center;
+    color: #0f5531
 }
 
 .header hr{
@@ -9,4 +10,6 @@
 
 .list{
     padding: 0% 10%; 
+    color: #666
+
 }
