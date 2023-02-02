@@ -17,12 +17,7 @@ const Investigadores = () => {
   }, []);
 
   return (
-    <Box
-      id="investigadores"
-      sx={{
-        paddingTop: "2%",
-      }}
-    >
+    <Box id="investigadores" sx={{}}>
       {loading === false ? (
         <>
           <Box>

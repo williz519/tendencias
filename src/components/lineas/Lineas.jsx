@@ -18,17 +18,24 @@ const Lineas = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          padding: "2% 10%",
         }}
       >
-        <Typography
-          variant="h4"
+        <Box
           sx={{
-            fontWeight: 500,
-            color: "#0f5531",
+            padding: "0% 10%",
           }}
         >
-          Líneas de Investigación
-        </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 500,
+              color: "#0f5531",
+            }}
+          >
+            Líneas de Investigación
+          </Typography>
+        </Box>
         <Divider
           sx={{
             width: "40%",

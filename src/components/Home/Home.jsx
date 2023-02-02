@@ -12,8 +12,9 @@ export const Home = () => {
       <NavBar />
       <Header />
       <Mision />
-      <Investigadores />
       <Lineas />
+      <Investigadores />
+
       <Footer />
     </div>
   );
