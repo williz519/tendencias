@@ -6,7 +6,7 @@ import NavBar from "../NavBar/NavBarMU";
 
 let lineas=[
   {
-    id:"Economia%20regional",
+    id:"Economia regional",
     lineas: ["Organización del Congreso Nacional de Mercado Laboral: Retos Regionales del Mercado de Trabajo, realizado en la Universidad de Antioquia, Seccional Oriente el 10 y 11 de noviembre de 2022.",
     'Presentación del avance de investigación "Disparidades Subregionales en el Mercado de Trabajo en Antioquia" en los seminarios técnicos del Departamento Nacional de Planeación. 20 de octubre de 2022.',
     "Sometimiento de los resultados de investigación “Análisis Exploratorio de la heterogeneidad del desempleo en el Departamento de Antioquia”, 2022",
@@ -63,7 +63,7 @@ const InvestDetail = () => {
           <Typography>
             La linea de investigación de {area2} cuenta con las siguientes actividades:
             <ul>{
-              filteredarray[0].lineas.map(el=><li>{el}</li>) 
+              filteredarray[0].lineas.map((el)=>(<li>{el}</li>)) 
               }
             </ul>
             
