@@ -63,7 +63,7 @@ const InvestDetail = () => {
           <Typography>
             La linea de investigación de {area2} cuenta con las siguientes actividades:
             <ul>{
-              filteredarray.lineas.map(el=><li>{el.lineas}</li>) 
+              filteredarray[0].lineas.map(el=><li>{el}</li>) 
               }
             </ul>
             
