@@ -7,6 +7,7 @@ const lineas = [
   "Economia regional",
   "Ciencia y analisis de datos",
   "Modelacion matematica y computacional",
+  "Laboratorio NEXUS",
 ];
 
 const Lineas = () => {
