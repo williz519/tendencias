@@ -89,7 +89,7 @@ let Lista = [
 
   {
     id: 9,
-    name: "Alderid Gutierrez (Mg)",
+    name: "Alderid Gutiérrez(Mg)",
     publish: [],
     projects: [],
   },
