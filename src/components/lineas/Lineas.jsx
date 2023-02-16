@@ -52,7 +52,7 @@ const Lineas = () => {
       >
         <Typography>
           Actualmente el grupo de investigación TENDENCIAS cuenta con las
-          siguientes línes de investigación:
+          siguientes líneas de investigación:
         </Typography>
         <Box>
           <ul>
