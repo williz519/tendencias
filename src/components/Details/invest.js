@@ -86,6 +86,13 @@ let Lista = [
     publish: [],
     projects: [],
   },
+
+  {
+    id: 9,
+    name: "Alderid Gutiérrez(Mg)",
+    publish: [],
+    projects: [],
+  },
 ];
 
 const Ordering = (a, b) => {
