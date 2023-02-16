@@ -4,12 +4,24 @@ import { useLocation } from "react-router-dom";
 import Footer from "../footer/footer";
 import NavBar from "../NavBar/NavBarMU";
 
+let lineas=[
+  {
+    id:"Economia%20regional",
+    lineas: ["Organización del Congreso Nacional de Mercado Laboral: Retos Regionales del Mercado de Trabajo, realizado en la Universidad de Antioquia, Seccional Oriente el 10 y 11 de noviembre de 2022.",
+    'Presentación del avance de investigación "Disparidades Subregionales en el Mercado de Trabajo en Antioquia" en los seminarios técnicos del Departamento Nacional de Planeación. 20 de octubre de 2022.',
+    "Sometimiento de los resultados de investigación “Análisis Exploratorio de la heterogeneidad del desempleo en el Departamento de Antioquia”, 2022",
+    "Participación conjunta con el grupo de Macroeconomía en el proyecto “Antioquia es plana” entre el IDEA y la Universidad de Antioquia.",
+  ]
+  }
+]
+
 const InvestDetail = () => {
   let location = useLocation();
   let area = location.pathname
     .substring(8, location.pathname.length)
     .toString();
   let area2 = area.replaceAll("%20", " ");
+  const filteredarray=lineas.filter(el=>el.id===area2)
   return (
     <Box
       sx={{
@@ -49,10 +61,12 @@ const InvestDetail = () => {
           }}
         >
           <Typography>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
-            commodi neque rem molestias labore, cum placeat quas provident
-            sapiente recusandae. Non, blanditiis ipsam. Cumque sed tempora ut,
-            deleniti minima similique!
+            La linea de investigación de {area2} cuenta con las siguientes actividades:
+            <ul>{
+              filteredarray.lineas.map(el=><li>{el.lineas}</li>) 
+              }
+            </ul>
+            
           </Typography>
         </Box>
       </Box>
