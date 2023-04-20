@@ -3,11 +3,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const lineas = [
-  "Pedagogia",
-  "Economia regional",
-  "Ciencia y analisis de datos",
-  "Modelacion matematica y computacional",
-  "Laboratotio NEXUS",
+  "Pedagogia y Educación",
+  "Terrirorio y Crecimiento Regional",
+  "Ciencia y Tecnología",
+  "Ingeniería y Desarrollo",
 ];
 
 const Lineas = () => {
